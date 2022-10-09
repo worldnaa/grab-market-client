@@ -9,7 +9,7 @@
     border-bottom: 1px solid gray; /* 아래만 회색 실선 */
 }
 #body {
-    height: 100%;            /* 높이: 헤더랑 푸터를 제외한 나머지 전체 */
+    height: 100vh;           /* vh: 부모와 상관없이 윈도우 전체 높이 (vw는 넓이)*/
     width: 1024px;           /* 넓이: margin 0 auto로 인해 가운데 정렬 */
     margin: 0 auto;          /* 부모를 기준으로 가운데 정렬하는 방법2 */
     padding-bottom: 24px;    /* 바디와 푸터 사이의 간격 조정 */
@@ -77,4 +77,8 @@
 }
 .product-avatar {
     width: 24px;
+}
+.product-link {
+    color: inherit; /* 글자 색상을 원래 색상으로 보여준다 (a태그 사용시 색 변하는거 방지 */
+    text-decoration: none; /* 글자의 밑줄을 없앤다 (a태그 사용시 밑줄 생기는거 방지 */
 }
