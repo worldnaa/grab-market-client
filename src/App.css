@@ -1,3 +1,41 @@
+* { /* 모든 태그에 기본으로 설정된 마진과 패딩을 없앤다 */
+  margin: 0;
+  padding: 0;
+  line-height: normal; /* antd에서 설정한 줄간격을 없애기 위해 normal 설정 */
+}
+
 html, body, #root, #root > div {
   height: 100%;
+}
+
+#header {
+  height: 64px;                    /* 높이는 64px, 너비는 전체 */
+  display: flex;                   /* 부모를 기준으로 가운데 정렬하는 방법1 */
+  justify-content: center;         /* 가로 가운데 정렬 */
+  border-bottom: 1px solid gray; /* 아래쪽 실선을 회색으로 */
+}
+
+#header-area {                    /* 가운데 정렬은 #header에서 flex로 함*/
+  width: 1024px;                  /* #body의 너비랑 같은 1024px 설정 */
+  height: 100%;                   /* 부모인 #header의 높이랑 같음*/
+  display: flex;                  /* 가로 정렬 */
+  align-items: center;            /* 세로 가운데 정렬 */
+  justify-content: space-between; /* 자식들을 양끝으로 배치 */
+}
+
+#header-area img {   /* #header-area 자식 전체 중 img 태그 선택 */
+  width: 128px;      /* 원래 크기 257px에서 절반 줄임 */
+  height: 36px;      /* 원래 크기 73px에서 절반 줄임 */
+}
+
+#body {
+  height: 100vh;        /* vh: 부모와 상관없이 윈도우 전체 높이 (vw는 너비)*/
+  width: 1024px;        /* 너비: margin 0 auto로 인해 가운데 정렬 */
+  margin: 0 auto;       /* 부모를 기준으로 가운데 정렬하는 방법2 */
+  padding-bottom: 24px; /* 바디와 푸터 사이의 간격 조정 */
+}
+
+#footer {
+  height: 200px;                           /* 높이는 200px, 너비는 전체 */
+  background-color: rgb(230, 230, 230);
 }

@@ -1,49 +1,23 @@
-* { /* 모든 태그에 기본으로 설정된 마진과 패딩을 없앤다 */
-    margin: 0;
-    padding: 0;
-}
-#header {
-    height: 64px;            /* 높이는 64px, 넓이는 전체 */
-    display: flex;           /* 부모를 기준으로 가운데 정렬하는 방법1 */
-    justify-content: center; /* 수평 가운데 정렬 */
-    border-bottom: 1px solid gray; /* 아래만 회색 실선 */
-}
-#body {
-    height: 100vh;           /* vh: 부모와 상관없이 윈도우 전체 높이 (vw는 넓이)*/
-    width: 1024px;           /* 넓이: margin 0 auto로 인해 가운데 정렬 */
-    margin: 0 auto;          /* 부모를 기준으로 가운데 정렬하는 방법2 */
-    padding-bottom: 24px;    /* 바디와 푸터 사이의 간격 조정 */
-}
-#footer {
-    height: 200px;           /* 높이는 200px, 넓이는 전체 */
-    background-color: rgb(230, 230, 230);
-}
 #banner {                    /* #body의 자식이라 #body 설정에 영향을 받음 */
-    height: 300px;           /* #body 높이에서 300px 차지, 넓이는 1024px */
+    height: 300px;           /* #body 높이에서 300px 차지, 너비는 1024px */
     background-color: yellow;
 }
-#header-area {               /* 가운데 정렬은 #header에서 flex로 함*/
-    width: 1024px;           /* #body의 넓이랑 같은 1024px 설정 */
-    height: 100%;            /* 부모인 #header의 높이랑 같음*/
-    display: flex;
-    align-items: center;     /* 수직 가운데 정렬 */
-}
-#header-area > img {         /* #header-area의 자식인 img 태그 선택 */
-    width: 128px;            /* 원래 크기 257px에서 절반 줄임 */
-    height: 36px;            /* 원래 크기 73px에서 절반 줄임 */
-}
+
 #banner > img {              /* #banner의 자식인 img 태그 선택 */
-    width: 100%;             /* 상위인 #body의 넓이 1024px 전체 사용 */
+    width: 100%;             /* 상위인 #body의 너비 1024px 전체 사용 */
     height: 300px;           /* 부모인 #banner의 높이랑 같게 300px 설정*/
 }
+
 #body > h1 {                 /* #body의 자식인 h1 태그 선택 */
-    margin-top: 16px;        /* 상위 마진을 16px 설정 */
+    margin-top: 16px;        /* 위쪽 마진을 16px 설정 */
 }
+
 #product-list {
-    display: flex;           /* 카드가 수직으로 나오던 것을 수평으로 나오게 한다 */
-    flex-wrap: wrap;         /* 리스트 넓이를 유지하며 줄바꿈을 한다 */
+    display: flex;           /* 카드가 세로로 나오던 것을 가로로 나오게 한다 */
+    flex-wrap: wrap;         /* 리스트 너비를 유지하며 줄바꿈을 한다 */
     margin-top: 12px;        /* h1태그(판매되는 상품들)와의 간격 조정 */
 }
+
 .product-card {              /* class가 product-card인 것들에 전체 적용 */
     width: 180px;
     height: 300px;
@@ -53,31 +27,38 @@
     border-radius: 12px;    /* 카드의 모서리를 둥글게 */
     overflow: hidden;       /* 이미지가 border보다 크면 넘치는 부분을 가려준다 */
 }
+
 .product-img {
     width: 100%;
     height: 210px;
 }
+
 .product-contents {
     display: flex;          /* span은 자기 영역만큼만 차지 */
-    flex-direction: column; /* 그래서 수직 정렬로 설정함 */
+    flex-direction: column; /* 그래서 세로 정렬로 설정함 */
     padding: 8px;
 }
+
 .product-name {
     font-size: 14px;
 }
+
 .product-price {
     font-size: 16px;  /* 폰트 사이즈 */
     font-weight: 600; /* 폰트 굵기 */
     margin-top: 4px;
 }
+
 .product-seller {
-    display: flex;       /* 수평 정렬 (default 수직 정렬) */
-    align-items: center; /* 수평 정렬된 것에서 수직 가운데 정렬 */
+    display: flex;       /* 가로 정렬 (default는 세로 정렬) */
+    align-items: center; /* 가로 정렬된 것에서 세로 가운데 정렬 */
     margin-top: 12px;
 }
+
 .product-avatar {
     width: 24px;
 }
+
 .product-link {
     color: inherit; /* 글자 색상을 원래 색상으로 보여준다 (a태그 사용시 색 변하는거 방지 */
     text-decoration: none; /* 글자의 밑줄을 없앤다 (a태그 사용시 밑줄 생기는거 방지 */
