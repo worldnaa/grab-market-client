@@ -8,7 +8,7 @@ function MainPage() {
 
   React.useEffect(function(){
     axios
-    .get('https://d59252e4-732d-4c26-bbb8-adac3f328deb.mock.pstmn.io/products')
+    .get('http://localhost:8080/products')
     .then(function(result){
       const products = result.data.products;
       setProducts(products);
